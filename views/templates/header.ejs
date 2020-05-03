@@ -2,7 +2,7 @@
 <html lang = "en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Lab 5</title>
+  <title>CST336 Final Project</title>
   <!-- import bootstrap -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
   <link href="css/app.css" rel="stylesheet">
@@ -10,10 +10,15 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>  
 </head>
 <body class = "container">
-  <nav class = "row">
-    <a class = "col-sm btn btn-primary" href = "/">Home</a>
-    <a class = "col-sm btn btn-primary" href = "/">Blog Search</a>
-    <a class = "col-sm btn btn-primary" href = "/">Activity Search</a>
-    <a class = "col-sm btn btn-primary" href = "/login">Log In</a>
-    <a class = "col-sm btn btn-primary" href = "/register">Register</a>
+  <nav class = "navbar navbar-expand-lg navbar-light bg-light row">
+    <div class = 'col-sm'><a class = "btn btn-primary" href = "/">Home</a></div>
+    <div class = 'col-sm'><a class = "btn btn-primary" href = "/">Blog Search</a></div>
+    <div class = 'col-sm'><a class = "btn btn-primary" href = "/">Activity Search</a></div>
+    <% console.log('typeof session: ' + typeof session); %>
+    <%if(typeof session != 'undefined' && session.isAuthenticated){%>
+      <div class = 'col-sm'><a class = 'btn btn-primary' href = '/logout'>Log out</a></div>
+    <% }else{ %>
+      <div class = 'col-sm'><a class = "btn btn-primary" href = "/login">Log In</a></div>
+      <div class = 'col-sm'><a class = "btn btn-primary" href = "/register">Register</a></div>
+    <% } %>
   </nav>

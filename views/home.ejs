@@ -1,5 +1,6 @@
-<%- include("templates/header.ejs") -%>
+<%- include("templates/header.ejs", {session:"hello"}) -%>
 
 <h1>Home Page</h1>
+<%console.log(session);%>
 
 <%- include("templates/footer.ejs") -%>
