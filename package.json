@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": " mysql -p 4ce83054 -u beb956d049b1b0 server_db < sql/initdbs.sql && node index.js"
   },
   "repository": {
     "type": "git",
