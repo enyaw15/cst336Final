@@ -15,12 +15,21 @@ app.use(session({
 app.set('view engine', 'ejs');//set the view engine so we can use ejs
 
 //create sql server 
+/*
 const connection = mysql.createConnection({
     host:"localhost",
     user: "enyaw",
     password: "0215Enyaw!",
     database: "server_db"
 });
+*/
+//mysql://beb956d049b1b0:4ce83054@us-cdbr-east-06.cleardb.net/heroku_88219e38d1dcf7d?reconnect=true
+const connection = mysql.createConnection({
+    host:"us-cdbr-east-06.cleardb.net",
+    database:"heroku_88219e38d1dcf7d",
+    user:"beb956d049b1b0",
+    password:"4ce83054"
+})
 connection.connect();
 
 function checkUsername(username){
