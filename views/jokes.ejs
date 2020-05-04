@@ -1,0 +1,12 @@
+<%- include("templates/header.ejs", {session:session}) -%>
+
+<h1>JOKES!</h1>
+<h6>Jokes courtesy of <a href="https://github.com/15Dkatz/official_joke_api">official_joke_api</a> </h6>
+<p id = "setup"></p>
+<p id = "punchline"></p>
+
+<button id = "jokebtn" class = "btn btn-primary">Get Joke</button>
+
+
+<script src = "js/jokes.js"></script> 
+<%- include("templates/footer.ejs") -%>

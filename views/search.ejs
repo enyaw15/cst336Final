@@ -1,0 +1,21 @@
+<%- include("templates/header.ejs", {session:session}) -%>
+
+<h1>Search</h1>
+<form method = "POST" action = "/search">
+    <select name="catagory" required = 'true'>
+        <option value="title">Title</option>
+        <option value="tag">Tag</option>
+        <option value="author_username">Author</option>
+    </select>
+    <input type="text" placeholder = "search" name = "search">
+    <button class = "btn btn-primary" >Search</button>
+</form>
+<%if(typeof results != 'undefined'){%>
+    <%for( let i = 0; i < results.length; i++){%>
+        <div class = "search-result">
+            <h5><a href = "/blog/<%=results[i].blogId%>"><%=results[i].title%></a></h5>
+            <p><%=results[i].author_username%></p>
+        </div>
+    <%}%>
+<%}%>
+<%- include("templates/footer.ejs") -%>

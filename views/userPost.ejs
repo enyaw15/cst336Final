@@ -1,0 +1,23 @@
+<%- include("templates/header.ejs", {session:session}) -%>
+
+<form method = "POST" action = "/userPost">
+    <div class = "form-group">
+        <label for = "title">Title</label>
+        <input class="form-control" name = "title" type="text" placeholder = "Title">
+    </div>
+    <div class = "form-group">
+        <label for= "tagnames">Tags</label>
+        <select class="form-control" name="tagnames" size = "4" multiple>
+            <%for(let i = 0; i < tags.length;i++){%>
+            <option value="<%=tags[i].tagname%>"><%=tags[i].tagname%></option>
+            <%}%>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="body">Blog</label>
+        <textarea class="form-control" name = "body" id="body" rows="3"></textarea>
+    </div>
+    <button class = "btn btn-primary">Submit</button>
+</form>
+
+<%- include("templates/footer.ejs") -%>
