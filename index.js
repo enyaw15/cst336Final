@@ -24,6 +24,7 @@ const connection = mysql.createConnection({
 });
 */
 //mysql://beb956d049b1b0:4ce83054@us-cdbr-east-06.cleardb.net/heroku_88219e38d1dcf7d?reconnect=true
+//reset the database
 //mysql -u beb956d049b1b0 --password=4ce83054 -h us-cdbr-east-06.cleardb.net heroku_88219e38d1dcf7d < sql/initdbs.sql
 const connection = mysql.createConnection({
     host:"us-cdbr-east-06.cleardb.net",
@@ -241,12 +242,11 @@ app.get('/editPost/:blogId', isAuthenticated, async function(req,res)
     if(blogData.blogId == 0) {
         res.redirect("/error");
     }
-    console.log(getTags(req.params.blogId));
     res.render('editPost.ejs', {session: await buildSessionData(req), blog: blogData,tags: await getTags(req.params.blogId)
     });
 });
 
-app.put('/editPost/:blogId', isAuthenticated, async function(req,res)
+app.post('/editPost/:blogId', isAuthenticated, async function(req,res)
 {
     let blogId = req.params.blogId;
     let blogData = await buildBlogData(req, blogId);

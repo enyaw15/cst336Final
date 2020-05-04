@@ -1,5 +1,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
+SET @@auto_increment_increment=1;
 START TRANSACTION;
 SET time_zone = "+00:00";
 

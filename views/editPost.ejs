@@ -10,7 +10,7 @@
     <%}%>
 </div>
 
-<form method = "PUT" action = "<%='/editPost/'+blog.blogId%>">
+<form method = "POST" action = "<%='/editPost/'+blog.blogId%>">
     <div class="form-group">
         <label for="body">Blog</label>
         <textarea class="form-control" name = "body" id="body" rows="3" ><%=blog.body%></textarea>
