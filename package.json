@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " mysql -u beb956d049b1b0 --password=4ce83054 -h us-cdbr-east-06.cleardb.net heroku_88219e38d1dcf7d < sql/initdbs.sql && node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

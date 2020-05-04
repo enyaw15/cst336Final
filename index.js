@@ -24,6 +24,7 @@ const connection = mysql.createConnection({
 });
 */
 //mysql://beb956d049b1b0:4ce83054@us-cdbr-east-06.cleardb.net/heroku_88219e38d1dcf7d?reconnect=true
+//mysql -u beb956d049b1b0 --password=4ce83054 -h us-cdbr-east-06.cleardb.net heroku_88219e38d1dcf7d < sql/initdbs.sql
 const connection = mysql.createConnection({
     host:"us-cdbr-east-06.cleardb.net",
     database:"heroku_88219e38d1dcf7d",
